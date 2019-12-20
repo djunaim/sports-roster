@@ -1,0 +1,74 @@
+{
+  "player1": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_headshot_desktop/f_auto/v1560185130/patriots/vfacx65d5r66rikwni1x.jpg",
+    "name": "Tom Brady",
+    "position": "quarterback",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player2": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_headshot_desktop/f_auto/v1560194542/patriots/zsrudb16yk7pqvpirse1.jpg",
+    "name": "Devin McCourty",
+    "position": "defensive back",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player3": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_headshot_desktop/f_auto/v1560198832/patriots/pspsh1t3apyndsemvnxf.jpg",
+    "name": "Matthew Slater",
+    "position": "wide receiver",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player4": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_headshot_desktop/f_auto/v1560200621/patriots/gsjeacu343fkqkfxqtff.jpg",
+    "name": "James White",
+    "position": "running back",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player5": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/v1560191885/patriots/ekxww0utmduvwcplmmlw.jpg",
+    "name": "James White",
+    "position": "linebacker",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player6": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/v1560189665/patriots/okwgdroxgbqwz3werjfm.jpg",
+    "name": "Julian Edelman",
+    "position": "wide receiver",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player7": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/patriots/mqjgxd40rtzwbi8w9aol.jpg",
+    "name": "Mohamed Sanu Sr",
+    "position": "wide receiver",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player8": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/v1560200472/patriots/rfhb2kspshpgjnze1u00.jpg",
+    "name": "Kyle Van Noy",
+    "position": "linebacker",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player9": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/v1560190841/patriots/yya2jgpccbnhmxuypmtr.jpg",
+    "name": "Stephen Gostkowski",
+    "position": "kicker",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player10": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/patriots/wcjfevgdubgpqsi2gfiv.jpg",
+    "name": "Rex Burkhead",
+    "position": "running back",
+    "uid": "7B8QZxglFtST5mwZaVeI8QoaknI3"
+  },
+  "player11": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_6_desktop/f_auto/chiefs/iwmsg6lhulvntsg327gk.jpg",
+    "name": "Patrick Mahomes",
+    "position": "quarterback",
+    "uid": "1234"
+  },
+  "player12": {
+    "imageUrl": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_3_4_desktop/f_auto/49ers/b6jcwijaqzqvj8rrl0ed.jpg",
+    "name": "Jimmy Garopollo",
+    "position": "quarterback",
+    "uid": "1234"
+  }
+}
