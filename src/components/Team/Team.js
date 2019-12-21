@@ -27,6 +27,15 @@ class Team extends React.Component {
       .catch((error) => console.error(error));
   }
 
+  deleteSinglePlayer = (playerId) => {
+    const uid = authData.getUid();
+    playersData.deletePlayers(playerId)
+      .then(() => {
+        this.getPlayersData(uid);
+      })
+      .catch((error) => console.error(error));
+  }
+
   componentDidMount() {
     const uid = authData.getUid();
     this.getPlayersData(uid);
@@ -39,7 +48,7 @@ class Team extends React.Component {
         <PlayerForm addPlayer={this.addPlayer}/>
         <div className="d-flex flex-wrap container">
           <div className="row">
-            { players.map((player) => <Players key={player.id} player={player}/>)}
+            { players.map((player) => <Players key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer}/>)}
           </div>
         </div>
       </div>
