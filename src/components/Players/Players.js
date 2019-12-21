@@ -15,6 +15,7 @@ class Players extends React.Component {
           <img src={player.imageUrl} className="card-img-top" alt="" />
           <div className="card-body">
             <h5 className="card-title">{player.name}</h5>
+            <p className="card-text">{player.position}</p>
             <button className="btn btn-danger" onClick={() => {}}>X</button>
             <button className="btn btn-secondary" onClick={() => {}}>Edit Player</button>
           </div>
