@@ -12,6 +12,7 @@ As a logged in user, you can see all the players on the roster, add new players,
 * Bootstrap: Free Open-Source CSS Framework
 * ES6 Modules
 * Firebase
+* React
 
 ## Screenshots
 ![homepage](https://raw.githubusercontent.com/djunaim/sports-roster/master/src/screenshots/homepage.PNG)
