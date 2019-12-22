@@ -53,6 +53,7 @@ class PlayerForm extends React.Component {
       position: this.state.playerPosition,
       uid: playerToEdit.uid,
     };
+    console.log(playerToEdit.id, updatedPlayer);
     updatePlayer(playerToEdit.id, updatedPlayer);
   }
 
