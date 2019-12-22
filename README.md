@@ -3,7 +3,7 @@
 ## Description
 Welcome to the sports roster for the BEST team in the world: The Patriots. A truly legendairy team with TB12 as their QB.
 
-Here, you can see all the players on the roster, add new players, remove players if they're injured, and edit player's content.
+As a logged in user, you can see all the players on the roster, add new players, remove players if they're injured, and edit player's content.
 
 ## Technologies Used
 * HTML5
@@ -13,7 +13,7 @@ Here, you can see all the players on the roster, add new players, remove players
 * ES6 Modules
 
 ## Screenshots
-![]()
+![homepage](https://raw.githubusercontent.com/djunaim/sports-roster/master/src/screenshots/homepage.PNG)
 
 ## Run this Project
 * Clone down project from Github
