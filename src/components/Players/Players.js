@@ -7,12 +7,21 @@ class Players extends React.Component {
   static propTypes = {
     player: playerShape.playerShape,
     deleteSinglePlayer: PropTypes.func,
+    setEditMode: PropTypes.func,
+    setPlayerToEdit: PropTypes.func,
   }
 
   deleteSinglePlayerEvent = (e) => {
     e.preventDefault();
     const { deleteSinglePlayer, player } = this.props;
     deleteSinglePlayer(player.id);
+  }
+
+  setEditMode = (e) => {
+    const { setEditMode, setPlayerToEdit, player } = this.props;
+    e.preventDefault();
+    setEditMode(true);
+    setPlayerToEdit(player);
   }
 
   render() {
@@ -25,7 +34,7 @@ class Players extends React.Component {
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
             <button className="btn btn-danger" onClick={this.deleteSinglePlayerEvent}>X</button>
-            <button className="btn btn-secondary" onClick={() => {}}>Edit Player</button>
+            <button className="btn btn-secondary" onClick={this.setEditMode}>Edit Player</button>
           </div>
         </div>
       </div>

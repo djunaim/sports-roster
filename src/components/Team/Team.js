@@ -8,6 +8,9 @@ import PlayerForm from '../PlayerForm/PlayerForm';
 class Team extends React.Component {
   state = {
     players: [],
+    playerToEdit: {},
+    editMode: false,
+    showPlayerForm: false,
   }
 
   getPlayersData = (uid) => {
@@ -36,6 +39,28 @@ class Team extends React.Component {
       .catch((error) => console.error(error));
   }
 
+  updatePlayer = (playerId, updatedPlayer) => {
+    const uid = authData.getUid();
+    playersData.updatePlayers(playerId, updatedPlayer)
+      .then(() => {
+        this.getPlayersData(uid);
+        this.setState({ editMode: false, showPlayerForm: false });
+      })
+      .catch((error) => console.error(error));
+  }
+
+  setEditMode = (editMode) => {
+    this.setState({ editMode, showPlayerForm: true });
+  }
+
+  setPlayerToEdit = (player) => {
+    this.setState({ playerToEdit: player });
+  }
+
+  setShowPlayerForm = () => {
+    this.setState({ showPlayerForm: true });
+  }
+
   componentDidMount() {
     const uid = authData.getUid();
     this.getPlayersData(uid);
@@ -45,10 +70,13 @@ class Team extends React.Component {
     const { players } = this.state;
     return (
       <div>
-        <PlayerForm addPlayer={this.addPlayer}/>
+        <button onClick={this.setShowPlayerForm}>Add New Player</button>
+        {
+          this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} editMode={this.state.editMode} playerToEdit={this.state.playerToEdit} updatePlayer={this.updatePlayer} />
+        }
         <div className="d-flex flex-wrap container">
           <div className="row">
-            { players.map((player) => <Players key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer}/>)}
+            { players.map((player) => <Players key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} setEditMode={this.setEditMode} setPlayerToEdit={this.setPlayerToEdit} />)}
           </div>
         </div>
       </div>
