@@ -3,6 +3,8 @@
 ## Description
 Welcome to the sports roster for the BEST team in the world: The Patriots. A truly legendairy team with TB12 as their QB.
 
+Here, you can see all the players on the roster, add new players, remove players if they're injured, and edit player's content.
+
 ## Technologies Used
 * HTML5
 * SCSS
