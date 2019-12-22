@@ -2,16 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import authData from '../../helpers/data/authData';
+import playerShape from '../../helpers/propz/playerShape';
 
 class PlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
+    editMode: PropTypes.bool,
+    playerToEdit: playerShape.playerShape,
+    updatePlayer: PropTypes.func,
   }
 
   state = {
     playerName: '',
     playerImageUrl: '',
     playerPosition: '',
+  }
+
+  componentDidMount() {
+    const { editMode, playerToEdit } = this.props;
+    if (editMode) {
+      this.setState({ playerName: playerToEdit.name, playerImageUrl: playerToEdit.imageUrl, playerPosition: playerToEdit.position });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
+      this.setState({ playerName: this.props.playerToEdit.name, playerImageUrl: this.props.playerToEdit.imageUrl, playerPosition: this.props.playerToEdit.position });
+    }
   }
 
   addPlayerEvent = (e) => {
@@ -25,6 +42,18 @@ class PlayerForm extends React.Component {
     };
     addPlayer(newPlayer);
     this.setState({ playerName: '', playerImageUrl: '', playerPosition: '' });
+  }
+
+  updatePlayerEvent = (e) => {
+    e.preventDefault();
+    const { updatePlayer, playerToEdit } = this.props;
+    const updatedPlayer = {
+      name: this.state.playerName,
+      imageUrl: this.state.playerImageUrl,
+      position: this.state.playerPosition,
+      uid: playerToEdit.uid,
+    };
+    updatePlayer(playerToEdit.id, updatedPlayer);
   }
 
   nameChange = (e) => {
@@ -44,11 +73,12 @@ class PlayerForm extends React.Component {
 
   render() {
     const { playerName, playerImageUrl, playerPosition } = this.state;
+    const { editMode } = this.props;
     return (
       <div>
         <form className='PlayerForm col-6 offset-3'>
           <div className="form-group">
-            <label for="playerName">Player's Name:</label>
+            <label htmlFor="playerName">Player's Name:</label>
             <input
               type="text"
               className="form-control"
@@ -59,7 +89,7 @@ class PlayerForm extends React.Component {
               />
           </div>
           <div className="form-group">
-            <label for="playerImageUrl">Player Image URL:</label>
+            <label htmlFor="playerImageUrl">Player Image URL:</label>
             <input
               type="text"
               className="form-control"
@@ -69,7 +99,7 @@ class PlayerForm extends React.Component {
               />
           </div>
           <div className="form-group">
-            <label for="playerPosition">Player's Position:</label>
+            <label htmlFor="playerPosition">Player's Position:</label>
             <input
               type="text"
               className="form-control"
@@ -79,7 +109,10 @@ class PlayerForm extends React.Component {
               />
           </div>
           <div>
-            <button className="btn btn-primary" onClick={this.addPlayerEvent}>Add Player</button>
+            {
+              (!editMode) ? (<button className="btn btn-primary" onClick={this.addPlayerEvent}>Add Player</button>)
+                : (<button className="btn btn-secondary" onClick={this.updatePlayerEvent}>Update Player</button>)
+            }
           </div>
         </form>
       </div>
